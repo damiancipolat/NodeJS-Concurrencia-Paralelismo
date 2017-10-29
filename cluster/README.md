@@ -10,4 +10,4 @@ En cambio, las aplicaciones de Node.js deben dividir varios procesos para maximi
 Cluster API. Puede invocar la API de clúster directamente en su aplicación, o puede usar una de muchas abstracciones sobre la API. Aquí, usaremos throng.
 
 - Para hacerlo de forma nativa usando CLUSTER API: https://nodejs.org/api/cluster.html
-- Se puede usar un wrapper llamadno THONG: https://github.com/hunterloftis/throng
+- Se puede usar un wrapper llamado THONG: https://github.com/hunterloftis/throng
