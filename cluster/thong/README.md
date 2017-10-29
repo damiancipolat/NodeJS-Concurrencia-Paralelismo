@@ -7,8 +7,10 @@ https://github.com/hunterloftis/throng
 
 ```sh
 
-EJEMPLO 1: "Ejemplo basico de como iniciar 5 proceso y asociar una función a cada uno"
-node app_1.js
+EJEMPLO 1: "Ejemplo basico de como iniciar 5 proceso y asociar una función a cada uno."
+$ node app_1.js
 
+EJEMPLO 2: "Muestra como iniciar 5 proceso y agregar un proceso padre a cada uno."
+$ node app_1.js
 
 ```
