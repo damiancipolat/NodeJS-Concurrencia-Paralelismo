@@ -7,6 +7,7 @@
 Cuando tenemos un solo procesador se producirá un intercalado delas instrucciones de ambos procesos, de tal forma que tendremos la sensación de que hay un paralelismo en el sistema (concurrencia, ejecución simultánea de más de un proceso).
 
 Una buena fuente para estudiar este tema:
+
 https://speakerdeck.com/orlando/concurrencia-paralelismo-y-el-event-loop
 https://www.oscarblancarteblog.com/2017/03/29/concurrencia-vs-paralelismo/
 
