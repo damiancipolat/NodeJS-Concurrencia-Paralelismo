@@ -1,6 +1,6 @@
 # NodeJS-Concurrencia-Paralelismo
 
-### CONCURRENCIA:
+### Introducción:
 - Dos o más procesos decimos que son **CONCURRENTES**, **PARALELOS**, o que se ejecutan concurrentemente, cuando son procesados almismo tiempo, es decir, que para ejecutar uno de ellos, no hace falta que se haya ejecutado otro.
 
 - En sistemas multiprocesador, esta ejecución simultánea podría conseguirse completamente, puesto que podremos asignarle, porejemplo, un proceso A al procesador A y un proceso B al procesador B y cada procesador realizaran la ejecución de su proceso.
