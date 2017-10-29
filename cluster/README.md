@@ -14,4 +14,4 @@ Cluster API. Puede invocar la API de clúster directamente en su aplicación, o 
 [NATIVE]:https://github.com/damiancipolat/NodeJS-Concurrencia-Paralelismo/tree/master/cluster/thong
 
 - Para hacerlo de forma nativa usando CLUSTER API: [THRONG]
-- Se puede usar un wrapper llamado THRONG: https://github.com/hunterloftis/throng
+- Ver como hacerlo usando [THRONG].
