@@ -6,6 +6,10 @@
 - En sistemas multiprocesador, esta ejecución simultánea podría conseguirse completamente, puesto que podremos asignarle, porejemplo, un proceso A al procesador A y un proceso B al procesador B y cada procesador realizaran la ejecución de su proceso.
 Cuando tenemos un solo procesador se producirá un intercalado delas instrucciones de ambos procesos, de tal forma que tendremos la sensación de que hay un paralelismo en el sistema (concurrencia, ejecución simultánea de más de un proceso).
 
+Una buena fuente para estudiar este tema:
+https://speakerdeck.com/orlando/concurrencia-paralelismo-y-el-event-loop
+https://www.oscarblancarteblog.com/2017/03/29/concurrencia-vs-paralelismo/
+
 ### CONCURRENCIA:
 La concurrencia es la capacidad del CPU para **procesar más de un proceso al mismo tiempo**.
 
@@ -17,9 +21,8 @@ El paralelismo sigue la filosofía de “divide y vencerás”, ya que consiste 
 ![N|solid](https://www.oscarblancarteblog.com/wp-content/uploads/2017/03/2.png)
 
 
-Para ver como aplicar estos conceptos con NODEJS se encuentran en **[CLUSTER]**:
+Para ver como aplicar estos conceptos con NODEJS tenemos que aprender sobre el termino **[CLUSTER]**:
 
 [CLUSTER]:https://github.com/damiancipolat/NodeJS-Concurrencia-Paralelismo/tree/master/cluster
 
-Una buena fuente para estudiar este tema:
-https://speakerdeck.com/orlando/concurrencia-paralelismo-y-el-event-loop
+
