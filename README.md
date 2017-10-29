@@ -9,3 +9,6 @@ Cuando tenemos un solo procesador se producirá un intercalado delas instruccion
 Para ver como aplicar estos conceptos con NODEJS se encuentran en **[CLUSTER]**:
 
 [CLUSTER]:https://github.com/damiancipolat/NodeJS-Concurrencia-Paralelismo/tree/master/cluster
+
+Una buena fuente para estudiar este tema:
+https://speakerdeck.com/orlando/concurrencia-paralelismo-y-el-event-loop
