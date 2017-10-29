@@ -12,7 +12,7 @@ La concurrencia es la capacidad del CPU para **procesar más de un proceso al mi
 ![N|solid](https://www.oscarblancarteblog.com/wp-content/uploads/2017/03/1-1.png)
 
 ### PARALELISMO:
-El paralelismo sigue la filosofía de “divide y vencerás”, ya que consiste en tomar un único problema, y mediante concurrencia llegar a una solución más rápido. El paralelismo lo que hace es tomar el problema inicial, dividir el problema en fracciones más pequeñas, y luego cada fracción es procesada de forma concurrente, aprovechando al máximo la capacidad del procesador para resolver el problema.
+El paralelismo sigue la filosofía de “divide y vencerás”, ya que consiste en tomar un único problema, y mediante concurrencia llegar a una solución más rápido. **El paralelismo lo que hace es tomar el problema inicial, dividir el problema en fracciones más pequeñas, y luego cada fracción es procesada de forma concurrente**, aprovechando al máximo la capacidad del procesador para resolver el problema.
 
 ![N|solid](https://www.oscarblancarteblog.com/wp-content/uploads/2017/03/2.png)
 
