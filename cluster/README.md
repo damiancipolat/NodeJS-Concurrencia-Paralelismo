@@ -7,7 +7,7 @@ NODEJS tiene una capacidad limitada para escalar a diferentes tamaños de conten
 está basado en V8, que tiene un límite de memoria dura de alrededor de 1,5 GB, por lo que tampoco puede aprovechar automáticamente la memoria adicional.
 
 En cambio, las aplicaciones de Node.js deben dividir varios procesos para maximizar sus recursos disponibles. Esto se denomina "clustering" y es compatible con Node.js
-Cluster API. Puede invocar la API de clúster directamente en su aplicación, o puede usar una de muchas abstracciones sobre la API. Aquí, usaremos throng.
+Cluster API. Puede invocar la API de clúster directamente en su aplicación, o puede usar una de muchas abstracciones sobre la API. Aquí, usaremos throng como wrapper y sino tambén hay ejemplos usando clusterApi nativo de nodejs.
 
 [THRONG]:https://github.com/damiancipolat/NodeJS-Concurrencia-Paralelismo/tree/master/cluster/thong
 
