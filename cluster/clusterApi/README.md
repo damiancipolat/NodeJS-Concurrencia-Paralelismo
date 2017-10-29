@@ -1,7 +1,7 @@
-# THRONG
+# CLUSTER API
 
 ### Repositorio:
-https://github.com/hunterloftis/throng
+https://nodejs.org/api/cluster.html
 
 La forma de trabajo de throng es hacer forks de nuestros proceso, es decir realiza copias del mismo y los ejecuta paralelo al nuestro, no se debe confundir con un esquema de hilos. 
 
