@@ -34,4 +34,4 @@ En el directorio [concurrencia] hay algunos ejemplos y escenarios de como implem
 ## Ejemplos / Paralelismo:
 En el directorio [paralelismo] hay algunos ejemplos y escenarios de como implementar esto en nodejs.
 
-[paralelismo]:https://github.com/damiancipolat/NodeJS-Concurrencia-Paralelismo/tree/master/concurrencia
+[paralelismo]:https://github.com/damiancipolat/NodeJS-Concurrencia-Paralelismo/tree/master/paralelismo
