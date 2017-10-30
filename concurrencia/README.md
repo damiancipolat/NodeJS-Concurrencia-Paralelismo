@@ -1,6 +1,6 @@
 # Concurrencia
 
-La concurrencia es la capacidad del CPU para procesar más de un proceso al mismo tiempo.
+> La concurrencia es la capacidad del CPU para procesar más de un proceso al mismo tiempo.
 
 Ejemplos de este concepto llevando a implementación:
 
