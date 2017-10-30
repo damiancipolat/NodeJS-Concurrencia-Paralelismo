@@ -12,7 +12,7 @@ https://speakerdeck.com/orlando/concurrencia-paralelismo-y-el-event-loop
 https://www.oscarblancarteblog.com/2017/03/29/concurrencia-vs-paralelismo/
 
 ### CONCURRENCIA:
-La concurrencia es la capacidad del CPU para **procesar más de un proceso al mismo tiempo**.
+La concurrencia es la capacidad del CPU para **ejecutar más de un proceso al mismo tiempo**.
 
 ![N|solid](https://www.oscarblancarteblog.com/wp-content/uploads/2017/03/1-1.png)
 
