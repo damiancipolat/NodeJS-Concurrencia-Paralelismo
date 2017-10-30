@@ -16,7 +16,8 @@ $ node app_1.js
 
 EJEMPLO 2: "Ejemplo basico de como crear proceso master y children y establecer una comunicación entre un 
 proceso hijo al padre. Se produce cada vez se conecta al puerto 7000."
-$ node app_1.js
+
+$ node app_2.js
 
 ```
 Usar el modulo CLUSTER de nodejs nos permite hacer aplicaciones mucho más complejas, en vez de usar el wrapper THRONG, tiene un mayor nivel de dificultad pero superada esa etapa abre puerta a poder usar muchas funcionalidades de este modulo, que sirven para poder crear aplicaciones que se ejecuten concurrentemente.
