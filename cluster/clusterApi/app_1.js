@@ -1,18 +1,43 @@
-//Incluyo el manejador de proceso THRONG.
-const throng   = require('throng');
+const cluster 	= require('cluster');
+const http 		  = require('http');
+const numCPUs  	= require('os').cpus().length;
 
-//Defino la cantidad de procesos a ejecutar paralelamente.
-const WORKERS  = process.env.WEB_CONCURRENCY || 5;
+//Proceso Master.
+const createMaster = ()=>{
 
-//Función que se ejecutara en cada proceso.
-const procMain = (workerId)=>{
-  
-  console.log(`Started worker ${workerId}`);
+	//Muestro info.
+	console.log('> Iniciando cluster!');
+	console.log('> Workers a crear: '+numCPUs);
+	console.log('');
+	console.log(`> Master ${process.pid} is running.`);
+	console.log('');
+
+	//Creo los workers.
+  for (let i = 0; i < numCPUs; i++)
+    cluster.fork();
+
+  //Cuando finalizo el proceso padre.
+  cluster.on('exit', (worker, code, signal) => {
+    console.log(`worker ${worker.process.pid} died.`);
+  });
 
 }
 
-//Defino la config. de procesos.
-throng({
-  workers  : WORKERS,
-  lifetime : Infinity
-}, procMain);
+//Proceso Child, en su creación cada uno hace un fork y duplica el contexto.
+const createChild = ()=>{
+
+  http.createServer((req, res) => {
+    res.writeHead(200);
+    res.end('hello world\n');
+  }).listen(8000);
+
+  console.log(`> Worker ${process.pid} started.`);
+
+}
+
+
+//Inicio el server.
+if (cluster.isMaster)
+  createMaster();
+else
+	createChild();
