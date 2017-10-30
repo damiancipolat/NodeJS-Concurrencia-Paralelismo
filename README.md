@@ -26,4 +26,8 @@ Para ver como aplicar estos conceptos con NODEJS tenemos que aprender sobre el t
 
 [CLUSTER]:https://github.com/damiancipolat/NodeJS-Concurrencia-Paralelismo/tree/master/cluster
 
+## Concurrencia:
+En el directorio [concurrencia] hay algunos ejemplos y escenarios de como implementar esto en nodejs.
+
+[concurrencia]:https://github.com/damiancipolat/NodeJS-Concurrencia-Paralelismo/tree/master/concurrencia
 
