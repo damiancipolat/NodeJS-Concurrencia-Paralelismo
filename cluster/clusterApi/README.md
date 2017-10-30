@@ -12,6 +12,7 @@ El módulo de clúster permite la creación sencilla de procesos secundarios que
 ```sh
 
 EJEMPLO 1: "Ejemplo basico de como hacer forks con nodejs, definir proceso master y childrens."
+
 $ node app_1.js
 
 EJEMPLO 2: "Ejemplo basico de como crear proceso master y children y establecer una comunicación entre un 
