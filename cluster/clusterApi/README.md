@@ -20,7 +20,7 @@ proceso hijo al padre. Se produce cada vez se conecta al puerto 7000."
 
 $ node app_2.js
 
-EJEMPLO 3: "Ejemplo de como hacer request de child a master en ambos sentidos."
+EJEMPLO 3: "Ejemplo de como hacer request de child a master en ambos sentidos, tambien plantea un esquema simple de paralelismo , enviando mensajes y obteniendo respuestas del resultados de la tarea resuelta por cada children."
 
 $ node app_3.js
 
