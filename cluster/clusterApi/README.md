@@ -20,7 +20,7 @@ proceso hijo al padre. Se produce cada vez se conecta al puerto 7000."
 
 $ node app_2.js
 
-EJEMPLO 3: "Ejemplo de como hacer comunicación entre procesos de padre a hijo y de hijo a padre."
+EJEMPLO 3: "Ejemplo de como hacer request de child a master en ambos sentidos."
 
 $ node app_3.js
 
