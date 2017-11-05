@@ -10,3 +10,13 @@ cantidad de procesos que el número de cpus disponibles en el equipo donde se co
 "Para ejecutar:"
 $ node /sumatoria/app.js
 ```
+
+- ### Ejemplo 2: "Busqueda de usuarios"
+Es un escenario que simula busqueda de usuarios, se arma un proceso que ofrece un servidor de api usando expressjs y frente a un request, reparte la tarea entre varios procesos, luego de obtener el resultado hace la respuesta al cliente.
+
+```sh
+"Para ejecutar:"
+$ cd /users/
+$ npm install
+$ node app.js
+```
