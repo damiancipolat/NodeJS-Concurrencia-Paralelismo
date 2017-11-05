@@ -20,3 +20,6 @@ Es un escenario que se distribuye el calculo de fibonacci entre varios procesos 
 $ cd /fibonnaci
 $ node app.js
 ```
+
+@TODO: falta agregar respuestas de cada children.
+
