@@ -8,15 +8,15 @@ cantidad de procesos que el número de cpus disponibles en el equipo donde se co
 
 ```sh
 "Para ejecutar:"
+$ cd sumatoria
 $ node /sumatoria/app.js
 ```
 
-- ### Ejemplo 2: "Busqueda de usuarios"
-Es un escenario que simula busqueda de usuarios, se arma un proceso que ofrece un servidor de api usando expressjs y frente a un request, reparte la tarea entre varios procesos, luego de obtener el resultado hace la respuesta al cliente.
+- ### Ejemplo 2: "Fibonnacci parallel"
+Es un escenario que se distribuye el calculo de fibonacci entre varios procesos que calculan a la vez las operacions y luego las devuelven al master.
 
 ```sh
 "Para ejecutar:"
-$ cd /users/
-$ npm install
+$ cd /fibonnaci
 $ node app.js
 ```
