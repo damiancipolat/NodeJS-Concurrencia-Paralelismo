@@ -7,5 +7,6 @@ Es un escenario en el que armarmos un array y se reparte en bloques la tarea de 
 cantidad de procesos que el número de cpus disponibles en el equipo donde se corra el script.
 
 ```sh
-$ npm install
+"Para ejecutar:"
+$ node /sumatoria/app.js
 ```
