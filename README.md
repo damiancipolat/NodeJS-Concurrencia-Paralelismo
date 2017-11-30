@@ -35,3 +35,26 @@ En el directorio [concurrencia] hay algunos ejemplos y escenarios de como implem
 En el directorio [paralelismo] hay algunos ejemplos y escenarios de como implementar esto en nodejs.
 
 [paralelismo]:https://github.com/damiancipolat/NodeJS-Concurrencia-Paralelismo/tree/master/paralelismo
+
+## Resumiendo:
+Fuente: https://platzi.com/blog/concurrencia-paralelismo-go-sengrid/
+
+Cuando tienes varias tareas que ejecutar y las haces al mismo tiempo necesitas una concurrencia.
+
+**Ejemplo**
+Imagina que tienes dos tareas en el día: llegar de la casa al trabajo (Tarea 1) y hacer una presentación (Tarea 2).
+
+Para llegar del trabajo a la casa tienes que tomar tres trenes: A B y C y esto toma 2 horas.
+Para hacer la presentación toma de tu tiempo 4 horas.
+Puedes ejecutar las tareas de tres maneras:
+
+Ejecución secuencial: Puedes ir al trabajo y a la llegada empezar a hacer la presentación. Así entonces, el total de tiempo para ejecutar las dos tareas en este caso, sería de 6 horas.
+
+Ejecución concurrente: te das cuenta que puedes emplear el tiempo en el que permaneces sentado en el tren para sacar tu laptop y adelantar la presentación, mientras llegas el trabajo. Los procesos son interrumpidos, pues no puedes trabajar en tu presentación mientras haces la fila para cada tren y es importante notar, que ambas tareas son ejecutadas por una misma persona.
+
+Ejecución paralela: En este caso, tienes un compañero de equipo al cual le pides que trabaje contigo en la presentación. Al final llegas al trabajo y tienes la presentación lista. En este caso, nota que el trabajo de presentación fue ejecutado por dos personas
+
+Para resumir:
+
+En concurrencia trabajas en tareas que son ejecutadas al mismo tiempo y de forma independiente.
+En paralelismo, divides el trabajo en sub-tareas para que pueda ser finalizado por más ejecutores.
