@@ -22,9 +22,11 @@ El paralelismo sigue la filosofía de “divide y vencerás”, ya que consiste 
 ![N|solid](https://www.oscarblancarteblog.com/wp-content/uploads/2017/03/2.png)
 
 
-Para ver como aplicar estos conceptos con NODEJS tenemos que aprender sobre el termino **[CLUSTER]**:
+Para ver como aplicar estos conceptos con NODEJS tenemos que aprender sobre el termino **[CLUSTER]**.
+(Aviso!) Usar el modulo cluster no suele ser la opción más popular entre los desarrolladores en sistemas productivos, se suele usar arquitecturas de balanceo de carga o microservicios, eso podes verlo en el repositorio **[arquitectura y escalabilidad]**.
 
 [CLUSTER]:https://github.com/damiancipolat/NodeJS-Concurrencia-Paralelismo/tree/master/cluster
+[arquitectura y escalabilidad]:https://github.com/damiancipolat/NodeJS-Arquitectura-Escalabilidad
 
 ## Ejemplos / Concurrencia:
 En el directorio [concurrencia] hay algunos ejemplos y escenarios de como implementar esto en nodejs.
