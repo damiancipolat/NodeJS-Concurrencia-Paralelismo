@@ -59,7 +59,7 @@ class ProcessBd{
   }
 
   //Agrego el request al buffer de procesos.
-  addRequest(workerId,val){
+  addRequest(workerId,request,response){
 
     let gId = 'req_'+this.counterId;
 
@@ -67,7 +67,7 @@ class ProcessBd{
     this.counterId++;
 
     //Guardo el proceso.
-    this.buffer[workerId].push({active:true,response:null});
+    this.buffer[workerId][gId] ={active:true,req:request,res:response};
 
     return [workerId,gId];
 
@@ -85,6 +85,11 @@ class ProcessBd{
 
     }
 
+  }
+
+  //Traigo un request.
+  getRequest(workerId,reqId){
+    return this.buffer[workerId][reqId];
   }
 
   //Traigo la lista de codigo de procesos.
@@ -132,28 +137,78 @@ class Master{
   
     console.log('> Vino del children:',msg);
 
+    msg = JSON.parse(msg);
+    console.log('mh',msg.cmd,(msg.cmd==='api-request-respose'));
+
+    //if (msg.cmd==='api-request-respose'){
+
+      //Traigo el worker.
+      let conex = this.bd.getRequest(msg.workId,msg.reqId);
+      //console.log('>enviooo',msg.workId,msg.reqId);
+      conex.res.json(msg.res);
+
+
+//    }
+
   }
 
   //Cargo los procesos childrens.
   createWorkers(){
 
     //Guardo la estructura de procesos en una matriz [workerId][gidRequest].
-    for (let i = 0; i <= config.workers-1; i++){
-
-      //Agrego un nuevo proceso.
-      this.bd.addWorker('worker-'+i);
-
+    for (let i = 0; i <= config.workers-1; i++)
       cluster.fork();
-
-    }
-
-    //Agrego a los workers el handler cdo. obtengo una respuesta de el.
+    
     for (const id in cluster.workers){
 
-      cluster.workers[id].on('message',this.onChildMsg);
-      cluster.workers[id].send({cmd:'api-request',workerId:1111});
+      //Agrego handle.
+      cluster.workers[id].on('message',this.onChildMsg);      
+
+      //Creo un idworker.      
+      let workerId = 'worker-'+id+'-'+cluster.workers[id].process.pid;
+      
+      //Guardo el worker.
+      this.bd.addWorker(workerId);
+
+      //Agrego property.
+      cluster.workers[id].idWorker = workerId;
 
     }
+
+  }
+
+  //Creo el mensaje.
+  makeMsgChild(workId,reqId,req,res){
+
+    return { cmd    :'api-request',
+            reqId   : reqId,
+            workId  : workId,
+            request : {url    :req.url,
+                       headers:req.headers,
+                       body   :req.body}};
+  }
+
+  //Envio el request a un worker.
+  sendRequestWorker(req,res){
+
+    //Le pido al planificador un worker.
+    let worker   = this.planificator.planificate(this.bd.getWorkers());
+
+    //Agrego el request y obtengo la coordenada del nuevo request.
+    let reqCoord = this.bd.addRequest(worker,req);
+    
+    //De la lista de workers traigo el que tiene ese id y le envio el mensaje.
+    for (const id in cluster.workers){
+
+      //Si encuentro el worker, el envio el mensaje.
+      if (cluster.workers[id].idWorker==reqCoord[0]){
+
+        console.log('> send to worker',cluster.workers[id].idWorker);
+        cluster.workers[id].send(this.makeMsgChild(cluster.workers[id].idWorker,reqCoord[1],req,res));
+
+      }
+
+    }    
 
   }
 
@@ -163,26 +218,10 @@ class Master{
     //Seteo el server.
     this.app  = express();
   
-  /*  
-    console.log('>>',this.bd.getWorkers());
-    console.log(config.planif);
-    console.log('/',this.planificator.planificate(this.bd.getWorkers()));
-    console.log('/',this.planificator.planificate(this.bd.getWorkers()));
-    console.log('/',this.planificator.planificate(this.bd.getWorkers()));
-*/
     //Manejo de rutas.
     this.app.get('/info/',(req,res)=>{
 
-      res.json({msj:'Api response from worker'});
-
-      //Traigo el worker.    
-      let worker = this.planificator.planificate(this.bd.getWorkers());
-
-      //Agrego el request y obtengo la coordenada del nuevo request.
-      let reqCoord = this.bd.addRequest(worker,111);
-      console.log('--->',reqCoord);
-
-
+      this.sendRequestWorker(req,res);
 
     });
 
@@ -219,6 +258,14 @@ class Worker{
 
   //Cuando llega del master.
   onMasterMsg(msg){
+
+    if (msg.cmd=='api-request'){
+
+      let response = {cmd:'api-request-response',reqId:msg.reqId,res:'1111111111'};
+      
+      process.send(JSON.stringify(response));
+
+    }
 
     console.log('> llega del master',msg);
 
